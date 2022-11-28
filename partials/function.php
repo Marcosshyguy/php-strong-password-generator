@@ -8,5 +8,6 @@ function getRandomPassword($user_length)
         $random_numba = mt_rand(0, (Strlen($password_samples_unit) - 1));
         $password .= $password_samples_unit[$random_numba];
     }
+    $_SESSION["password"] = $password;
     return $password;
 }
