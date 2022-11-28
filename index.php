@@ -1,12 +1,16 @@
 <?php
 session_start();
 include_once __DIR__ . "/partials/function.php";
-$password_length = intval($_GET["password_length"]) ?? 0;
+$password_length = $_GET["password_length"] ?? '';
+intval($password_length);
 
-if ($_SESSION["password_length"] > 0 && $_SESSION["password_length"] <= 16) {
+if (!empty($password_length)) {
+    if ($password_length > 0 && $password_length <= 16) {
 
-
-    $_SESSION["password"] = getRandomPassword($_SESSION["password_length"]);
+        getRandomPassword($password_length);
+        $_SESSION["rewq"] = getRandomPassword($password_length);
+        header("Location: ./session/your_password.php");
+    }
 }
 ?>
 
@@ -27,7 +31,7 @@ if ($_SESSION["password_length"] > 0 && $_SESSION["password_length"] <= 16) {
     <h1 class="h1 text-center">Strong Password Generator</h1>
 
     <div class="container">
-        <form action="./session/your_password.php" method="get">
+        <form action="index.php" method="get">
             <label for="password_length">Lunghezza password:</label>
             <input type="number" id="password_length" name="password_length">
             <div>
@@ -37,6 +41,7 @@ if ($_SESSION["password_length"] > 0 && $_SESSION["password_length"] <= 16) {
 
         </form>
     </div>
+
 </body>
 
 </html>

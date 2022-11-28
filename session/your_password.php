@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <h2>La tua a password è <?php echo $_SESSION["password"]; ?></h2>
-
+    <h2>La tua a password è <?php echo $_SESSION["rewq"]; ?></h2>
+    <a href="logout.php">Logout</a>
 
 </body>
 
