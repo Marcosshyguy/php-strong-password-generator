@@ -10,13 +10,7 @@ if (!empty($password_length)) {
         getRandomPassword($password_length);
         $_SESSION["rewq"] = getRandomPassword($password_length);
         header("Location: ./session/your_password.php");
-    } else {
-        $_SESSION["rewq"] = "la password non corrisponde al numero di caratteri richiesto";
-        //--> questo redirect non è necessario ma sarebbe meglio visualizzare il tutto con un messaggio in index
-        header("Location: ./session/your_password.php");
     }
-
-    //-->aggiungere parte con else per errore
 }
 ?>
 
@@ -53,14 +47,13 @@ if (!empty($password_length)) {
             </div>
             <div>
                 <p>Scegli quali caratteri usare</p>
-                <!-- usiamo in name un stringa che poi presi dentro un array con la chiamata Get -->
-                <input type="checkbox" name="caratteri[]" id="letter" value="letter">
+                <input type="checkbox" name="letter" id="letter">
                 <label for="letter">Lettere</label>
                 <br>
-                <input type="checkbox" name="caratteri[]" id="number" value="number">
+                <input type="checkbox" name="number" id="number">
                 <label for="number">Numeri</label>
                 <br>
-                <input type="checkbox" name="caratteri[]" id="symbol" value="symbol">
+                <input type="checkbox" name="symbol" id="symbol">
                 <label for="symbol">Simboli</label>
             </div>
         </form>

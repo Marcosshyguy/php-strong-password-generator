@@ -1,8 +1,5 @@
 <?php session_start();
-//-->sarebbe da mettere un conreollo con iiseet su sesssion che se è not redirectare lutente a index.html
-if (!isset($_SESSION["rewq"])) {
-    header("Location: ../index.php");
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
