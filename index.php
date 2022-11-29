@@ -38,7 +38,24 @@ if (!empty($password_length)) {
                 <button type="submit">Invia</button>
                 <button type="reset">Annulla</button>
             </div>
-
+            <div>
+                <p>Consenti ripetizione di uno o più caratteri</p>
+                <input type="radio" id="repeat" name="repeat" value="repeat">
+                <label for="repeat">Si</label><br>
+                <input type="radio" id="repeat" name="repeat" value="no_repeat">
+                <label for="repeat">No</label><br>
+            </div>
+            <div>
+                <p>Scegli quali caratteri usare</p>
+                <input type="checkbox" name="letter" id="letter">
+                <label for="letter">Lettere</label>
+                <br>
+                <input type="checkbox" name="number" id="number">
+                <label for="number">Numeri</label>
+                <br>
+                <input type="checkbox" name="symbol" id="symbol">
+                <label for="symbol">Simboli</label>
+            </div>
         </form>
     </div>
 
